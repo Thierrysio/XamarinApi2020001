@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApi2020001.Vues.ClientVue">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding MaListeClients}"  SelectionMode="Single" SelectionChangedCommand ="{Binding cvcommand}" VerticalOptions="Fill">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0"
+                       Source="lignes.png"
+                       Aspect="AspectFill"
+                       HeightRequest="60"
+                       WidthRequest="60" />
+                            <Label Grid.Row="1"
+                       Text="{Binding Nom}"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
