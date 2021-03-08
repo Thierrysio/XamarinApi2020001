@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
 
 namespace XamarinApi2020001.Services
@@ -18,5 +19,22 @@ namespace XamarinApi2020001.Services
 
             return resultat;
         }
+        public static T GetObjet<T>(List<T> param, int param2)
+
+        {
+            T result = default(T);
+            foreach (T unparam in param)
+            {
+                PropertyInfo x = (unparam.GetType().GetProperty("id"));
+                int nbi = Convert.ToInt32(x.GetValue(unparam));
+                if (nbi == Convert.ToInt32(param2))
+                {
+                    result = unparam;
+                    break;
+                }
+            }
+            return result;
+        }
+       
     }
 }
