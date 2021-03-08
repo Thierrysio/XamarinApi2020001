@@ -19,6 +19,10 @@ namespace XamarinApi2020001.Services
         /// <typeparam name="T">la classe concernée</typeparam>
         /// <param name="paramUrl">l'adresse de l'API</param>
         /// <param name="param">la collection de classe concernee</param>
+        /// public async void GetListe()
+        ///{
+        ///MaListeClients = await _apiServices.GetAllAsync<Client>("api/clients", Client.CollClasse);
+        ///}
         /// <returns>la liste des occurences</returns>
         public async Task<ObservableCollection<T>> GetAllAsync<T>(string paramUrl,List<T>param)
         {
